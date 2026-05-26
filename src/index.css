@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #101b2d;
+  background: #f4f7fb;
+  font-family: "Segoe UI Variable", Inter, "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 88% 2%, rgba(37, 99, 235, 0.06), transparent 27rem),
+    radial-gradient(circle at 30% 0%, rgba(8, 145, 178, 0.05), transparent 24rem),
+    #f4f7fb;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(8, 145, 178, 0.2);
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/80 bg-white/[0.82] shadow-panel backdrop-blur-xl;
+  }
+
+  .dark-glass {
+    @apply border border-white/10 bg-white/[0.045] shadow-panel backdrop-blur-xl;
+  }
+
+  .panel {
+    @apply rounded-3xl border border-line/90 bg-surface-gradient p-5 shadow-panel transition duration-300 hover:border-cyanBrand/15 hover:shadow-elevated sm:p-6;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-slate-50/70 px-4 py-3 text-sm text-slate-800 outline-none transition duration-200 focus:border-cyanBrand focus:bg-white focus:ring-4 focus:ring-cyanBrand/10;
+  }
+
+  .label {
+    @apply mb-2 block text-sm font-medium text-slate-700;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-gradient px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyanBrand/20 transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-electric/25;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white/80 px-5 py-3 text-sm font-semibold text-charcoal shadow-sm transition hover:border-cyanBrand/25 hover:bg-cyanBrand/[0.04];
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-cyanBrand/15 bg-cyanBrand/[0.08] px-3 py-1 text-xs font-semibold text-cyan-700;
+  }
+
+  .surface-inset {
+    @apply rounded-2xl border border-line/80 bg-white/60;
+  }
+
+  .card-kicker {
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgba(100, 116, 139, 0.055) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-width: none;
+  }
+
+  .sidebar-scroll {
+    scrollbar-color: rgba(148, 163, 184, 0.32) transparent;
+    scrollbar-width: thin;
+  }
+
+  .sidebar-scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .sidebar-scroll::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.32);
+    border-radius: 999px;
+  }
+}
